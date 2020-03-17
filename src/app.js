@@ -100,6 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         $("tr td:nth-last-child(3)").prepend("<img> </img>");
         $("tr td:nth-last-child(3) img").attr('id', 'member-pic');
+
+        var removeUser = document.getElementsByClassName('remove');
+
+        for (var i = 0; i < removeUser.length; i++) {
+            removeUser[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                this.closest('tr').remove();
+            });
+        }
     }
 
     CreateTable();
