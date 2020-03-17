@@ -17,7 +17,7 @@
 
 - Clone the repo on your local
 - Install all dependencies on Terminal `npm i`
-- Open a separate tab on Terminal and run `npm start` page will be available on 'localhost:4000'
+- Open a separate tab on Terminal and run `npm start` page will be available on `localhost:4000`
 - On separate tab run `npm run build` to compile app.js
 
 ### Approach
@@ -30,12 +30,20 @@ To create a new random row that pick random member name, email, role a new funct
 
 ### Structure
 
-- All files are stored into /src, /src/scss, /src/images
-- /mockup contians only the design to reproduce as reference
-- /\_base.scss contains all variables needed in order to have a code more clean and organised.
+- All files are stored into '/src', '/src/scss', '/src/images'
+- '/mockup' contians only the design to reproduce as reference
+- '/\_base.scss' contains all variables needed in order to have a code more clean and organised.
 
 ### Useful links
 
-- To try to match the right HEX color I did use: ' https://imagecolorpicker.com/'
-- To get as closer as possible to font I've done my search on 'https://fonts.google.com/ '
-- To compare sketch design I did use 'https://www.photopea.com/ '
+- To try to match the right HEX color I did use: https://imagecolorpicker.com/
+- To get as closer as possible to font I've done my search on https://fonts.google.com/
+- To compare sketch design I did use https://www.photopea.com/
+
+### Command Line
+
+- `dev": "watch 'npm run build' src` to look at all changes without run the build every time. After saved it will automatically compiled and create a new `bundle.js`. Refresh the page to see all changes.
+- `start": "node index"` to initialised server on localhost:4000 in this case
+- `npm run build` to compile the file and create 'dist' folder to host bundle.js
+- `test` to check any error in the code while compiling
+- `serve` to lanch the page if `npm start` is up and running.
