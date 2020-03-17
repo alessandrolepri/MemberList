@@ -4,6 +4,9 @@ import './scss/style.scss'
 document.addEventListener("DOMContentLoaded", () => {
 
     const CreateTable = () => {
+
+        // CREATE MEMBER LIST
+
         var members = [{
 
                 "Team Member": "Erica Badu",
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ]
 
         // EXTRACT VALUE FOR HTML HEADER.
+
         var col = [];
         for (var i = 0; i < members.length; i++) {
             for (var key in members[i]) {
@@ -54,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // CREATE DYNAMIC TABLE.
+
         var table = document.createElement("table");
 
         // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
@@ -67,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // ADD JSON DATA TO THE TABLE AS ROWS.
+
         for (var i = 0; i < members.length; i++) {
 
             tr = table.insertRow(-1);
@@ -79,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
 
-
         var divContainer = document.querySelector(".box");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
@@ -87,6 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
         table = document.createElement('table');
 
         document.body.appendChild(table);
+
+        // CREATING BUTTON TO REMOVE MEMBER FROM THE LIST ON CLICK
+
+        $("tr td:nth-last-child(1)").append("<button> </button>");
+        $("tr td:nth-last-child(1) button").addClass('remove');
+
+        $("tr td:nth-last-child(3)").prepend("<img> </img>");
+        $("tr td:nth-last-child(3) img").attr('id', 'member-pic');
     }
 
     CreateTable();
