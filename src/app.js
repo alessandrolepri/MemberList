@@ -95,11 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // CREATING BUTTON TO REMOVE MEMBER FROM THE LIST ON CLICK
 
-        $("tr td:nth-last-child(1)").append("<button> </button>");
-        $("tr td:nth-last-child(1) button").addClass('remove');
+        $("tr td:nth-last-child(1)")
+            .append("<button> </button>");
+        $("tr td:nth-last-child(1) button")
+            .addClass('remove');
 
-        $("tr td:nth-last-child(3)").prepend("<img> </img>");
-        $("tr td:nth-last-child(3) img").attr('id', 'member-pic');
+        $("tr td:nth-last-child(3)")
+            .prepend("<img> </img>");
+        $("tr td:nth-last-child(3) img")
+            .attr('id', 'member-pic');
 
         var removeUser = document.getElementsByClassName('remove');
 

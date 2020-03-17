@@ -7,6 +7,7 @@
 header {
     font-family: "Nunito Sans", sans-serif;
     font-weight: 100;
+    margin-left: 10px;
 }
 
 button.member-add {
@@ -71,7 +72,6 @@ span.plus-user-img {
     border: none;
     color: #586c7e;
     outline: none;
-    cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     padding-left: 20px;
@@ -108,6 +108,7 @@ h1 {
 .box tbody tr:hover {
     .remove {
         opacity: 1;
+        cursor: pointer;
     }
 }
 
@@ -120,4 +121,36 @@ td {
     font-weight: 400;
     color: #566b7d;
     border-bottom: 1px solid #ddd;
+}
+
+.box th,
+.box td {
+    padding: 25px 0;
+}
+
+tr th:last-child {
+    width: 300px;
+}
+
+tr td:nth-child(2) {
+    width: 400px;
+    padding-top: 22px;
+}
+
+tr td:nth-child(1) {
+    width: 340px;
+}
+
+th {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #475d71;
+
+    &:nth-child(2) {
+        width: 274px;
+    }
+
+    &:last-child {
+        width: 117px;
+    }
 }
