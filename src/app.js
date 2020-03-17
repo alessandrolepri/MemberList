@@ -128,6 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
 
+        // ***** NOT WORKING ****
+
+        var imgs = ['.src/images/olly.svg', '.src/images/bin-zappar.png', '.src/images/face-hoodie-zappar.png', '.src/images/olly.png', '.src/images/p-zappar.png', '.src/images/user-zappar.png'];
+
+        for (var i = 0; i < imgs.length; i++) {
+            var tr = document.createElement('tr');
+            tr.appendChild(document.createElement('td'))
+                .appendChild(document.createElement('img'))
+                .src = imgs[i];
+        }
+
         remove();
 
         // ******** CREATE NEW TABLE ROW ON CLICK BUTTON '+' OR 'INVITE' *******
