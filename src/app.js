@@ -161,14 +161,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Mark",
                 "Laura",
                 "Emma",
-                "John"
+                "John",
+                "Sacha",
+                "Hugo"
             ];
 
             let randomRoles = [
                 "Co-owner",
                 "Standard",
                 "Admin",
-                "Receptionist"
+                "Receptionist",
+                "Warehouse",
+                "Marketing"
             ]
 
             let randomEmails = [
@@ -176,6 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "zappar.zappar@example.com",
                 "hi.hi@example.com",
                 "test.test@example.com",
+                "marketing@test.com",
+                "warehouse@example.co.uk"
             ]
 
             let randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
