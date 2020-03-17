@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             $("tr td:nth-last-child(3)")
                 .prepend("<img> </img>");
             $("tr td:nth-last-child(3) img")
-                .attr('id', 'member-pic');
+                .attr('class', 'member-pic');
 
             let removeUser = document.getElementsByClassName('remove');
 
