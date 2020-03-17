@@ -4,6 +4,90 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: red;
+header {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 100;
+}
+
+button.member-add {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #cf371e;
+    display: inline-block;
+    color: #fff;
+    font-size: 46px;
+    text-align: center;
+    line-height: 40px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding: 0 155px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 3px 0 #344b60;
+    border-radius: 12px;
+}
+
+.box {
+    width: 100%;
+    text-align: left;
+}
+
+.active-counter {
+    color: #d8d8d8;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+}
+
+.invite-member {
+    margin-top: -2px;
+}
+
+span.plus-user-img {
+    background-image: $user;
+    width: 23px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.invite {
+    border: none;
+    color: #586c7e;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+h1 {
+    display: inline-block;
+    font-weight: 100;
+    margin-right: 10px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.active {
+    display: flex;
+    padding: 32px 0;
 }
