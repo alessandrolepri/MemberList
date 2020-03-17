@@ -42,8 +42,8 @@ To create a new random row that pick random member name, email, role a new funct
 
 ### Command Line
 
-- `dev": "watch 'npm run build' src` to look at all changes without run the build every time. After saved it will automatically compiled and create a new `bundle.js`. Refresh the page to see all changes.
-- `start": "node index"` to initialised server on localhost:4000 in this case
+- `dev: "watch 'npm run build' src` to look at all changes without run the build every time. After saved it will automatically compiled and create a new `bundle.js`. Refresh the page to see all changes.
+- `start: "node index"` to initialised server on localhost:4000 in this case
 - `npm run build` to compile the file and create 'dist' folder to host bundle.js
 - `test` to check any error in the code while compiling
 - `serve` to lanch the page if `npm start` is up and running.
