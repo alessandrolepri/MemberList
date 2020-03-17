@@ -3,11 +3,11 @@ import './scss/style.scss'
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const CreateTable = () => {
+    const createTable = () => {
 
         // CREATE MEMBER LIST
 
-        var members = [{
+        let members = [{
 
                 "Team Member": "Erica Badu",
                 "Email": "e.badu@example.com",
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // EXTRACT VALUE FOR HTML HEADER.
 
-        var col = [];
+        let col = [];
         for (var i = 0; i < members.length; i++) {
             for (var key in members[i]) {
                 if (col.indexOf(key) === -1) {
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // CREATE DYNAMIC TABLE.
 
-        var table = document.createElement("table");
+        let table = document.createElement("table");
 
         // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 
-        var tr = table.insertRow(-1); // TABLE ROW.
+        let tr = table.insertRow(-1); // TABLE ROW.
 
         for (var i = 0; i < col.length; i++) {
             var th = document.createElement("th"); // TABLE HEADER.
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
 
-        var divContainer = document.querySelector(".box");
+        let divContainer = document.querySelector(".box");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
 
@@ -95,26 +95,122 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // CREATING BUTTON TO REMOVE MEMBER FROM THE LIST ON CLICK
 
-        $("tr td:nth-last-child(1)")
-            .append("<button> </button>");
-        $("tr td:nth-last-child(1) button")
-            .addClass('remove');
+        let remove = () => {
+            $("tr td:nth-last-child(1)")
+                .append("<button> </button>");
+            $("tr td:nth-last-child(1) button")
+                .addClass('remove');
 
-        $("tr td:nth-last-child(3)")
-            .prepend("<img> </img>");
-        $("tr td:nth-last-child(3) img")
-            .attr('id', 'member-pic');
+            $("tr td:nth-last-child(3)")
+                .prepend("<img> </img>");
+            $("tr td:nth-last-child(3) img")
+                .attr('id', 'member-pic');
 
-        var removeUser = document.getElementsByClassName('remove');
+            let removeUser = document.getElementsByClassName('remove');
 
-        for (var i = 0; i < removeUser.length; i++) {
-            removeUser[i].addEventListener('click', function (e) {
-                e.preventDefault();
-                this.closest('tr').remove();
-            });
+            for (var i = 0; i < removeUser.length; i++) {
+                removeUser[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    this.closest('tr').remove();
+                });
+            }
+
+            //  ON CLICK CREATE A NEW MEMBER ROW
+
+            let add = document.querySelector('.invite')
+            let invite = document.querySelector('.member-add')
+
+            add.addEventListener('click', () => {
+                createRow();
+            })
+            invite.addEventListener('click', () => {
+                createRow();
+            })
+        }
+
+        remove();
+
+        // ******** CREATE NEW TABLE ROW ON CLICK BUTTON '+' OR 'INVITE' *******
+
+        let createRow = () => {
+
+            let row = document.createElement('tr');
+
+            // CREATE COLUMN NODE
+
+            let col = document.createElement('td');
+
+            // CREATE SECOND COLUMN NODE
+
+            let col2 = document.createElement('td');
+
+            // create THIRD column node
+
+            let col3 = document.createElement('td');
+
+            // APPEND TO ROW
+
+            row.appendChild(col);
+            row.appendChild(col2);
+
+            row.appendChild(col);
+            row.appendChild(col2);
+            row.appendChild(col3);
+
+            let randomNames = [
+                "Mark",
+                "Laura",
+                "Emma",
+                "John"
+            ];
+
+            let randomRoles = [
+                "Co-owner",
+                "Standard",
+                "Admin",
+                "Receptionist"
+            ]
+
+            let randomEmails = [
+                "m.m@example.com",
+                "zappar.zappar@example.com",
+                "hi.hi@example.com",
+                "test.test@example.com",
+            ]
+
+            let randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
+            let randomRole = randomRoles[Math.floor(Math.random() * randomRoles.length)];
+            let randomEmail = randomEmails[Math.floor(Math.random() * randomEmails.length)];
+
+
+            col.innerHTML = `${randomName}`;
+            col2.innerHTML = `${randomEmail}`;
+            col3.innerHTML = `${randomRole}`;
+
+            let table = $("tr:last-child");
+            table.after(row);
+
+            let bin = document.createElement('button')
+            bin.classList.add('remove');
+
+            col3.append(bin)
+
+            let imageMember = document.createElement('img');
+            imageMember.classList.add('member-pic')
+
+            col.prepend(imageMember);
+
+            let removeUserRandom = document.getElementsByClassName('remove');
+
+            for (var i = 0; i < removeUserRandom.length; i++) {
+                removeUserRandom[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    this.closest('tr').remove();
+                })
+            };
         }
     }
 
-    CreateTable();
+    createTable();
 
 })
